@@ -50,7 +50,13 @@ android {
 }
 
 dependencies {
-
+    val nav_version = "2.7.7"
+    val composeBom = platform("androidx.compose:compose-bom:2024.05.00")
+    implementation(composeBom)
+    implementation ("androidx.navigation:navigation-compose:$nav_version")
+    implementation ("androidx.navigation:navigation-compose:latest_version")
+    implementation("com.android.volley:volley:1.2.0")
+    implementation ("androidx.compose.runtime:runtime-livedata:1.0.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
