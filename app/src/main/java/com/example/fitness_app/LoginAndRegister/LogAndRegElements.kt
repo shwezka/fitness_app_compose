@@ -161,3 +161,23 @@ Column (modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Cent
     }
 }
 }
+
+/*@Composable
+fun AdvanceButton(text: String,onClick: () -> Unit) {
+    val isActive = remember { mutableStateOf(false) }
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Button(
+            onClick = {
+                isActive.value = !isActive.value
+                onClick()
+            },
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = if (isActive.value) Color.Yellow else Color.White,
+                contentColor = Color.Black
+            )
+        ) {
+            Text(text = text, style = TextStyle(color = Black, fontFamily = LeagueSpartan, fontWeight = FontWeight.Medium, fontSize = 18.sp, textAlign = TextAlign.Center))
+        }
+    }
+
+}*/

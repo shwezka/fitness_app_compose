@@ -124,7 +124,7 @@ fun SetUpYearOld(navController: NavController){
             Spacer(modifier = Modifier.height(23.dp))
             LazyRowYearOld(yearOld = yearOld)
             Spacer(modifier = Modifier.height(193.dp))
-            CastomButtonLog(text = "Continue", width = 178) {}
+            CastomButtonLog(text = "Continue", width = 178){navController.navigate("PhysicalActivityLevel")}
             Spacer(modifier = Modifier.height(51.dp))
         }
     }
