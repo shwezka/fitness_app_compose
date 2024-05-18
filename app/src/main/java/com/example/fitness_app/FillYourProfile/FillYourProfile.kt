@@ -35,6 +35,7 @@ fun FillYourProfile(navController: NavController){
             Spacer(modifier = Modifier.height(36.dp))
             HeaderText("Fill Your Profile") //Заголовок
             Spacer(modifier = Modifier.height(31.dp))
+
             DescriptionText(text = "Lorem ipsum ") //Текст описания !!ТИМА ИЗМЕНИ!!
             Spacer(modifier = Modifier.height(35.dp))
             InputFieldsProfile(
