@@ -30,26 +30,32 @@ import com.example.fitness_app.ui.theme.White
 
 @Composable
 fun ActivityLevelButton(isPressed : Boolean,text : String,onClick:()->Unit){
-
-    Button(
-        onClick,
+    Row(
         modifier = Modifier
-            .height(64.dp)
-            .width(323.dp),
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center
+    ) {
+        Button(
+            onClick,
+            modifier = Modifier
+                .height(64.dp)
+                .width(323.dp),
             shape = RoundedCornerShape(100f),
 
 
-        colors = if(isPressed){ButtonDefaults.buttonColors(containerColor =LimeGreen)}
-        else{ButtonDefaults.buttonColors(containerColor = White)}
+            colors = if(isPressed){ButtonDefaults.buttonColors(containerColor =LimeGreen)}
+            else{ButtonDefaults.buttonColors(containerColor = White)}
 
         ){
-        Text(text = text, fontSize = 24.sp,
-            fontFamily = LeagueSpartan,
-            fontWeight = FontWeight(500),
-            color = if(isPressed){ Black}
-                    else{Purple})
+            Text(text = text, fontSize = 24.sp,
+                fontFamily = LeagueSpartan,
+                fontWeight = FontWeight(500),
+                color = if(isPressed){ Black}
+                else{Purple})
         }
-}
+    }
+    }
+
 @Composable
 fun CustomButtonContinue(isEnabled : Boolean,text: String, width: Int, onClick:()->Unit){
     Row (modifier = Modifier.fillMaxWidth(),
@@ -57,9 +63,11 @@ fun CustomButtonContinue(isEnabled : Boolean,text: String, width: Int, onClick:(
         Button(onClick = { onClick() }, modifier = Modifier
             .width(width.dp)
             .height(44.dp)
-            .border(width = 0.5.dp,
+            .border(
+                width = 0.5.dp,
                 color = White,
-                shape = RoundedCornerShape(100.dp)),
+                shape = RoundedCornerShape(100.dp)
+            ),
             colors = ButtonDefaults.buttonColors(containerColor = Black),
             enabled = isEnabled
 

@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,59 +35,51 @@ fun PhysicalActivityLevel(
 
 
 
-    Surface(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Black)
-    ){  Spacer(modifier = Modifier.height(38.dp))
-        TopBackButton({}) //Кнопка возвращения на предыдущее окно
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+    Column( modifier = Modifier
+        .fillMaxSize()
+        .background(Black),
 
-            Spacer(modifier = Modifier.height(36.dp))
-            HeaderText("Physical Activity Level") //Заголовок
-            Spacer(modifier = Modifier.height(31.dp))
-            DescriptionText(text = "Lorem ipsum ") //Текст описания !!ТИМА ИЗМЕНИ!!
-            Spacer(modifier = Modifier.height(114.dp))
-            ActivityLevelButton( //Beginner Button
-                isPressed = isPressedBeginner,
-                text = "Beginner",
-                onClick = {
-                    isPressedBeginner = true
-                    isPressedIntermediate = false
-                    isPressedAdvanced = false
-                    isEnabled = true
+    ){
+                Spacer(modifier = Modifier.height(38.dp))
+                TopBackButton({}) //Кнопка возвращения на предыдущее окно
+                Spacer(modifier = Modifier.height(36.dp))
+                HeaderText("Physical Activity Level") //Заголовок
+                Spacer(modifier = Modifier.height(31.dp))
+                DescriptionText(text = "Lorem ipsum ") //Текст описания !!ТИМА ИЗМЕНИ!!
+                Spacer(modifier = Modifier.height(114.dp))
+                ActivityLevelButton( //Beginner Button
+                    isPressed = isPressedBeginner,
+                    text = "Beginner",
+                    onClick ={
+                        isPressedBeginner = true
+                        isPressedIntermediate = false
+                        isPressedAdvanced = false
+                        isEnabled = true
 
-                })
-            Spacer(modifier = Modifier.height(36.dp))
-            ActivityLevelButton( //Intermediate Button
-                isPressed = isPressedIntermediate,
-                text = "Intermediate",
-                onClick = {
-                    isPressedBeginner = false
-                    isPressedIntermediate = true
-                    isPressedAdvanced = false
-                    isEnabled = true
-                })
-            Spacer(modifier = Modifier.height(36.dp))
-            ActivityLevelButton( //Advanced Button
-                isPressed = isPressedAdvanced,
-                text = "Advanced",
-                onClick = {
-                    isPressedBeginner = false
-                    isPressedIntermediate = false
-                    isPressedAdvanced = true
-                    isEnabled = true
+                    } )
+                Spacer(modifier = Modifier.height(36.dp))
+                ActivityLevelButton( //Intermediate Button
+                    isPressed = isPressedIntermediate,
+                    text = "Intermediate",
+                    onClick ={
+                        isPressedBeginner = false
+                        isPressedIntermediate = true
+                        isPressedAdvanced = false
+                        isEnabled = true
+                    } )
+                Spacer(modifier = Modifier.height(36.dp))
+                ActivityLevelButton( //Advanced Button
+                    isPressed = isPressedAdvanced,
+                    text = "Advanced",
+                    onClick ={
+                        isPressedBeginner = false
+                        isPressedIntermediate = false
+                        isPressedAdvanced = true
+                        isEnabled = true
 
-                })
-            Spacer(modifier = Modifier.height(148.dp))
-            CustomButtonContinue(
-                isEnabled,
-                text = "Continue",
-                width = 178
-            ) { navController.navigate("FillYourProfile") }
+                    } )
+                Spacer(modifier = Modifier.height(148.dp))
+                CustomButtonContinue(isEnabled,text = "Continue", width = 178){navController.navigate("FillYourProfile")}
 
         }
-    }
 }

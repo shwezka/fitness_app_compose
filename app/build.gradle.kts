@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.media3.exoplayer)
     val nav_version = "2.7.7"
     val composeBom = platform("androidx.compose:compose-bom:2024.05.00")
     implementation(composeBom)
