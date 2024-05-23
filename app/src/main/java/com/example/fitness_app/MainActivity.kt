@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.fitness_app.FillYourProfile.FillYourProfile
+import com.example.fitness_app.FloatingMenu.ProfileScreen
 import com.example.fitness_app.LoginAndRegister.ForgottenPassword
 import com.example.fitness_app.LoginAndRegister.LoginScreen
 import com.example.fitness_app.LoginAndRegister.RegistrationScreen
@@ -126,6 +127,7 @@ fun Navidator (){
         ) {
             SetUpYearOld(navController)
         }
+        //PhysicalActivityLevel
         composable(route = "PhysicalActivityLevel",
             enterTransition = { fadeIn(animationSpec = tween(durationMillis = 1)) },
             exitTransition = { fadeOut(animationSpec = tween(durationMillis = 100)) },
@@ -134,6 +136,7 @@ fun Navidator (){
         ) {
             PhysicalActivityLevel(navController)
         }
+        //FillYourProfile
         composable(route = "FillYourProfile",
             enterTransition = { fadeIn(animationSpec = tween(durationMillis = 1)) },
             exitTransition = { fadeOut(animationSpec = tween(durationMillis = 100)) },
@@ -141,6 +144,15 @@ fun Navidator (){
             popExitTransition = { fadeOut(animationSpec = tween(durationMillis = 1)) },
             ){
             FillYourProfile(navController)
+        }
+        //ProfileScreen
+        composable(route = "ProfileScreen",
+            enterTransition = { fadeIn(animationSpec = tween(durationMillis = 1)) },
+            exitTransition = { fadeOut(animationSpec = tween(durationMillis = 100)) },
+            popEnterTransition = { fadeIn(animationSpec = tween(durationMillis = 100)) },
+            popExitTransition = { fadeOut(animationSpec = tween(durationMillis = 1)) },
+            ){
+            ProfileScreen(navController)
         }
     }
 

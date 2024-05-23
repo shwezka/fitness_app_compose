@@ -65,7 +65,7 @@ fun SetupMain(navController: NavController){
                 Text(text= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", style = TextStyle(color = Black, fontFamily = LeagueSpartan, fontWeight = FontWeight.Light, fontSize = 14.sp, textAlign = TextAlign.Center, lineHeight = 14.sp), modifier = Modifier.fillMaxWidth())
             }
             Spacer(modifier = Modifier.height(42.dp))
-            CastomButtonLog(text = "Next", width = 178) {navController.navigate("SetUpGender")}
+            CastomButtonLog(text = "Next", width = 178) {navController.navigate("ProfileScreen")}//Заменить на SetUpGender
             Spacer(modifier = Modifier.height(37.dp))
         }
     }
