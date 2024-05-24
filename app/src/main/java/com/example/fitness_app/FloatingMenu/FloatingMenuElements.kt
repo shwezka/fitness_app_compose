@@ -1,5 +1,7 @@
 package com.example.fitness_app.FloatingMenu
 
+import android.media.Image
+import android.widget.ImageButton
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -29,6 +31,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -295,18 +298,18 @@ fun WeightAgeHeightBar(weight:Int,age: Int,height: Float){
 }
 
 @Composable
-@Preview
-fun ProfileIconButton(){
+fun ProfileIconButton(id : Int,text: String, space: Int){
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 35.dp, end = 35.dp),
-        horizontalArrangement = Arrangement.Center,
+            .padding(start = 35.dp, end = 35.dp)
+            .clickable { TODO() },
+
         verticalAlignment = Alignment.CenterVertically
 
     ) {
         Image(
-            painter = painterResource(id = R.drawable.profile_human_icon),
+            painter = painterResource(id = id),
             contentDescription = "",
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -316,7 +319,7 @@ fun ProfileIconButton(){
         )
         Spacer(modifier = Modifier.width(23.dp))
         Text(
-            text ="Profile" ,
+            text =text ,
             style = TextStyle(
                 color = White,
                 fontFamily = LeagueSpartan,
@@ -327,13 +330,21 @@ fun ProfileIconButton(){
                 top = 13.dp,
                 bottom = 13.dp )
             )
-        Spacer(modifier = Modifier.width(166.dp))
-        Icon(painter = painterResource(id = R.drawable.nexticon), contentDescription = "", modifier = Modifier
-            .width(6.dp)
-            .height(11.dp),
-            tint = LimeGreen,
 
-        )
+        Spacer(modifier = Modifier.width(space.dp))
+
+        Box(modifier = Modifier
+
+        ){
+            Icon(
+                painter = painterResource(id = R.drawable.nexticon), contentDescription = "",
+                modifier = Modifier
+                    .width(6.dp)
+                    .height(11.dp),
+                tint = LimeGreen
+            )
+        }
+
     }
 
 }
